@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/bg.webp");
+  position: absolute;
+}
+.priceBar {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.itemBar {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Header {
+  margin: 20px auto 0 auto;
+  background-color: white;
+  font-size: 36pt;
+  text-align: center;
+  width: 75vw;
+  position: relative;
+}
+
+.TokenPrice {
+  background-color: white;
+  font-size: 18pt;
+  text-align: center;
+  width: 15vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Item {
+  background-color: white;
+  font-size: 18pt;
+  text-align: center;
+  width: 15vw;
+  height: 24vh;
+}

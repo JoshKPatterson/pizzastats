@@ -8,6 +8,7 @@ import TokenPrice from "./TokenPrice";
 import GasPrice from "./GasPrice";
 import Item from "./Item";
 import Header from "./Header";
+import PizzeriaSim from "./PizzeriaSim";
 import "../styles.scss";
 
 // App
@@ -107,17 +108,25 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <div className="priceBar">
-        <TokenPrice token={"Pizza"} price={pricePizza} />
-        <TokenPrice token={"Soda"} price={priceSoda} />
-        <TokenPrice token={"Avax"} price={priceAvax} />
+        <div className="tokenBar">
+          <TokenPrice token={"🍕Pizza"} price={pricePizza} />
+          <TokenPrice token={"🥤Soda"} price={priceSoda} />
+          <TokenPrice token={"🔺Avax"} price={priceAvax} />
+        </div>
+        <div className="gasBar">
+          <GasPrice prices={priceGas} />
+        </div>
       </div>
       <div className="itemBar">
-        <Item payload={itemData.chef} />
-        <Item payload={itemData.pizzaPeel} />
-        <Item payload={itemData.pizzaCutter} />
-        <Item payload={itemData.pizzaBox} />
+        <Item payload={itemData.chef} prices={[pricePizza, priceSoda, priceAvax]}/>
+        <Item payload={itemData.pizzaPeel} prices={[pricePizza, priceSoda, priceAvax]}/>
+        <Item payload={itemData.pizzaCutter} prices={[pricePizza, priceSoda, priceAvax]}/>
+        <Item payload={itemData.pizzaBox} prices={[pricePizza, priceSoda, priceAvax]}/>
       </div>
+      <button onClick={() => console.log(priceGas)}>buton</button>
+      <PizzeriaSim />
     </div>
   );
 }
